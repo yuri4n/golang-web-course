@@ -14,5 +14,6 @@ func main() {
 	}
 	defer conn.Close()
 
+	// Write 'I dialed you' right on the connection
 	_, _ = fmt.Fprintln(conn, "I dialed you.")
 }
