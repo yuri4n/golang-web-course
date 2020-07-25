@@ -31,6 +31,8 @@ func main() {
 	}
 }
 
+// Implements the http.Handler interface signature for a new created local type called
+// handler
 func (h handler) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 	// Parse the form, required to get the data in <request.Form>
 	err := r.ParseForm()
