@@ -1,0 +1,26 @@
+<html lang="en">
+<head>
+    <title>Names Collection</title>
+</head>
+<body>
+{{ if . }}
+    <p><strong>Vars: </strong></p>
+    {{ range $key, $value := .}}
+        <p><strong>{{ $key }}</strong></p>
+        <ul>{{range $value}}
+                <li><em>{{ . }}</em></li>
+            {{ end }}
+        </ul>
+    {{end}}
+{{ end }}
+
+<form action="/" method="POST">
+    <label>
+        Enter a name:
+        <input type="text" name="firstName">
+    </label>
+    <input type="submit" name="submit" value="Submit Name">
+</form>
+
+</body>
+</html>
