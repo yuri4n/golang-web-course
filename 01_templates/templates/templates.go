@@ -5,6 +5,7 @@ import "fmt"
 func main() {
 	name := "Julian Garzon"
 
+	// Template made with string literal
 	tpl := fmt.Sprintf(`
 		<!DOCTYPE html>
 		<html lang="en">
