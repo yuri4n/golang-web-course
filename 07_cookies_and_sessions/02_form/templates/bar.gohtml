@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bar</title>
+</head>
+<body>
+<h1>Welcome to the bar. What can I get you to drink?</h1>
+
+{{if .FirstName}}
+    USER NAME {{.Username}}<br>
+    PASSWORD {{.Password}}<br>
+    FIRST {{.FirstName}}<br>
+    LAST {{.LastName}}<br>
+    <h2><a href="/logout">log out</a></h2>
+{{end}}
+</body>
+</html>

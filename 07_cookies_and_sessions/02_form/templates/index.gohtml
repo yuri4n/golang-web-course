@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Home</title>
+</head>
+<body>
+{{ if .Username}}
+    <h5>Welcome {{ .Username }}</h5>
+    <a href="/bar">Go to the bar</a><br>
+    <p>This is a test website</p>
+{{ else }}
+    <h5>Please login to continue</h5>
+    <a href="/login">Login</a><br>
+    <a href="/register">Register</a>
+{{ end }}
+</body>
+</html>
