@@ -52,9 +52,10 @@ func main() {
 	http.HandleFunc("/login", login)
 	// Applies the authorized middleware.
 	http.HandleFunc("/logout", authorized(logout))
+	http.HandleFunc("/ping", ping)
 	http.Handle("/favicon.ico", http.NotFoundHandler())
 
-	err := http.ListenAndServe(":8080", nil)
+	err := http.ListenAndServe(":80", nil)
 	if err != nil {
 		log.Fatalln(err)
 	}
@@ -72,6 +73,10 @@ func index(w http.ResponseWriter, req *http.Request) {
 		log.Fatalln(err)
 	}
 	fmt.Println(user, admin)
+}
+
+func ping(w http.ResponseWriter, _ *http.Request) {
+	_, _ = io.WriteString(w, "OK")
 }
 
 // Redirect outside if the current user not have the permission set as Agent.
